@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct HomeView: View {
+
+    @State private var showCreate = false
+
     var body: some View {
         NavigationStack {
             List {
@@ -9,6 +12,22 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("Holiday Log")
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        showCreate.toggle()
+                    }, label: {
+                        Label("Add trip", systemImage: "plus")
+                    })
+                }
+            }
+            .sheet(isPresented: $showCreate,
+                   content: {
+                NavigationStack {
+                    CreateHolidayView()
+                }
+                .presentationDetents([.medium])
+            })
         }
     }
 }
