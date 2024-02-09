@@ -5,7 +5,7 @@ import SwiftUI
 struct HolidayLogApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HolidaysListView()
                 .modelContainer(for: Holiday.self)
         }
     }
