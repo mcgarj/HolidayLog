@@ -15,8 +15,8 @@ final class Holiday {
 
     init(name: String = "",
          country: String = "",
-         dateFrom: Date,
-         dateTo: Date,
+         dateFrom: Date = Date.now,
+         dateTo: Date = Date.now.addingTimeInterval(86400),
          details: String = "",
          photos: [String]? = nil,
          locationMap: String? = nil,

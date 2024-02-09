@@ -4,6 +4,8 @@ struct CreateHolidayView: View {
 
     @Environment(\.dismiss) var dismiss
 
+    @State private var holiday = Holiday()
+
     var body: some View {
         List {
             TextField("Place", text: .constant(""))
@@ -24,4 +26,5 @@ struct CreateHolidayView: View {
 
 #Preview {
     CreateHolidayView()
+        .modelContainer(for: Holiday.self)
 }
