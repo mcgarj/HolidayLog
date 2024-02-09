@@ -8,8 +8,9 @@ final class Holiday {
     var dateFrom: Date
     var dateTo: Date
     var details: String
-    var photos: [UIImage]?
-    var map: UIImage?
+    //TODO: CHANGE TO IMAGE TYPE
+    var photos: [String]?
+    var locationMap: String?
     var isFavourite: Bool
 
     init(name: String = "",
@@ -17,8 +18,8 @@ final class Holiday {
          dateFrom: Date,
          dateTo: Date,
          details: String = "",
-         photos: [UIImage]? = nil,
-         map: UIImage? = nil,
+         photos: [String]? = nil,
+         locationMap: String? = nil,
          isFavourite: Bool = false) {
         self.name = name
         self.country = country
@@ -26,7 +27,7 @@ final class Holiday {
         self.dateTo = dateTo
         self.details = details
         self.photos = photos
-        self.map = map
+        self.locationMap = locationMap
         self.isFavourite = isFavourite
     }
 }
