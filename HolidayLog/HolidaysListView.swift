@@ -16,24 +16,7 @@ struct HolidaysListView: View {
                         NavigationLink {
                             HolidayDetailView(trip: trip)
                         } label: {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Text(trip.name)
-                                        .font(.headline)
-                                    Text("\(trip.dateFrom.formatted(date: .abbreviated, time: .omitted))")
-                                        .font(.subheadline)
-                                    Text("\(trip.dateTo.formatted(date: .abbreviated, time: .omitted))")
-                                        .font(.subheadline)
-                                }
-                                HStack {
-                                    Text(trip.country)
-                                        .font(.subheadline)
-                                    if trip.isFavourite {
-                                        Image(systemName: "star.fill")
-                                            .foregroundStyle(.yellow)
-                                    }
-                                }
-                            }
+                            HolidayRowListView(trip: trip)
                         }
                     }
                     .swipeActions {

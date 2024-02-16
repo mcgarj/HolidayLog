@@ -14,6 +14,7 @@
 		41032E012B762F8100EFF672 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41032E002B762F8100EFF672 /* Holiday.swift */; };
 		415C251B2B7F683700A61889 /* UpdateHolidayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C251A2B7F683700A61889 /* UpdateHolidayView.swift */; };
 		415C251D2B7F7A0E00A61889 /* HolidayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C251C2B7F7A0E00A61889 /* HolidayDetailView.swift */; };
+		415C251F2B7F994900A61889 /* HolidayRowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C251E2B7F994900A61889 /* HolidayRowListView.swift */; };
 		419C17C42B76461000D6B75D /* CreateHolidayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419C17C32B76461000D6B75D /* CreateHolidayView.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		41032E002B762F8100EFF672 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		415C251A2B7F683700A61889 /* UpdateHolidayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateHolidayView.swift; sourceTree = "<group>"; };
 		415C251C2B7F7A0E00A61889 /* HolidayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDetailView.swift; sourceTree = "<group>"; };
+		415C251E2B7F994900A61889 /* HolidayRowListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayRowListView.swift; sourceTree = "<group>"; };
 		419C17C32B76461000D6B75D /* CreateHolidayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHolidayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				419C17C32B76461000D6B75D /* CreateHolidayView.swift */,
 				415C251C2B7F7A0E00A61889 /* HolidayDetailView.swift */,
 				415C251A2B7F683700A61889 /* UpdateHolidayView.swift */,
+				415C251E2B7F994900A61889 /* HolidayRowListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				415C251D2B7F7A0E00A61889 /* HolidayDetailView.swift in Sources */,
+				415C251F2B7F994900A61889 /* HolidayRowListView.swift in Sources */,
 				41032E012B762F8100EFF672 /* Holiday.swift in Sources */,
 				41032DF22B7622BC00EFF672 /* HolidaysListView.swift in Sources */,
 				415C251B2B7F683700A61889 /* UpdateHolidayView.swift in Sources */,
