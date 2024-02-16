@@ -13,3 +13,20 @@ When Xcode has downloaded, launch Xcode from Applications (or wherever you saved
 
 ## Running the app
 
+This section assumes you have Xcode installed and have cloned this repo. 
+
+With the project open in Xcode, at the top ensure you have an iOS device selected from the dropdown list here:
+
+<div style="width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+
+![Screenshot showing how to select an iOS simulator device](Assets/images/selecting-device.png)
+
+</div>
+
+To run the app click the play button on the right-hand side of Xcode:
+
+<div style="width: 100%; max-width: 800px; margin-left: auto; margin-right: auto;">
+
+![Screenshot showing how to run the project](Assets/images/run-the-app.png)
+
+</div>
