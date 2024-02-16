@@ -13,26 +13,28 @@ struct HolidaysListView: View {
             List {
                 ForEach(trips) { trip in
                     HStack {
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text(trip.name)
-                                    .font(.headline)
-                                Text("\(trip.dateFrom.formatted(date: .abbreviated, time: .omitted))")
-                                    .font(.subheadline)
-                                Text("\(trip.dateTo.formatted(date: .abbreviated, time: .omitted))")
-                                    .font(.subheadline)
-                            }
-                            HStack {
-                                Text(trip.country)
-                                    .font(.subheadline)
-                                if trip.isFavourite {
-                                    Image(systemName: "star.fill")
-                                        .foregroundStyle(.yellow)
+                        NavigationLink {
+                            HolidayDetailView(trip: trip)
+                        } label: {
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text(trip.name)
+                                        .font(.headline)
+                                    Text("\(trip.dateFrom.formatted(date: .abbreviated, time: .omitted))")
+                                        .font(.subheadline)
+                                    Text("\(trip.dateTo.formatted(date: .abbreviated, time: .omitted))")
+                                        .font(.subheadline)
+                                }
+                                HStack {
+                                    Text(trip.country)
+                                        .font(.subheadline)
+                                    if trip.isFavourite {
+                                        Image(systemName: "star.fill")
+                                            .foregroundStyle(.yellow)
+                                    }
                                 }
                             }
                         }
-
-
                     }
                     .swipeActions {
                         Button(role: .destructive) {
