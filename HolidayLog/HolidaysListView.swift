@@ -5,6 +5,7 @@ struct HolidaysListView: View {
     @Environment(\.modelContext) var context
 
     @State private var showCreate = false
+    @State private var tripToEdit: Holiday?
     @Query private var trips: [Holiday]
 
     var body: some View {
@@ -42,6 +43,13 @@ struct HolidaysListView: View {
                             Label("Delete", systemImage: "trash")
                                 .symbolVariant(.fill)
                         }
+
+                        Button {
+                            tripToEdit = trip
+                        } label: {
+                            Label("Edit", systemImage: "pencil")
+                        }
+                        .tint(.orange)
                     }
                 }
             }
@@ -63,6 +71,11 @@ struct HolidaysListView: View {
                 }
                 .presentationDetents([.medium])
             })
+            .sheet(item: $tripToEdit) {
+                tripToEdit = nil
+            } content: { trip in
+                UpdateHolidayView(holiday: trip)
+            }
         }
     }
 }
