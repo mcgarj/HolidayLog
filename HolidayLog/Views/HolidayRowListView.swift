@@ -16,6 +16,7 @@ struct HolidayRowListView: View {
             HStack {
                 Text(trip.country)
                     .font(.subheadline)
+                Spacer()
                 if trip.isFavourite {
                     Image(systemName: "star.fill")
                         .foregroundStyle(.yellow)
