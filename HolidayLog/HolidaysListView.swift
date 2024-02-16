@@ -2,6 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct HolidaysListView: View {
+    @Environment(\.modelContext) var context
 
     @State private var showCreate = false
     @Query private var trips: [Holiday]
@@ -31,6 +32,16 @@ struct HolidaysListView: View {
                         }
 
 
+                    }
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            withAnimation {
+                                context.delete(trip)
+                            }
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                                .symbolVariant(.fill)
+                        }
                     }
                 }
             }
