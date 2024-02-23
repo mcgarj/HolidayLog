@@ -24,10 +24,30 @@ struct CreateHolidayView: View {
             }
 
             Section {
-                PhotosPicker(selection: .constant(nil),
+
+                if let selectedPhotoData, let uiImage = UIImage(data: selectedPhotoData) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity, maxHeight: 300)
+                }
+
+                PhotosPicker(selection: $selectedPhoto,
                              matching: .images,
                              photoLibrary: .shared()) {
                     Label("Add Image", systemImage: "photo")
+                }
+
+                if selectedPhotoData != nil {
+                    Button(role: .destructive) {
+                        withAnimation {
+                            selectedPhoto = nil
+                            selectedPhotoData = nil
+                        }
+                    } label: {
+                        Label("Remove Image", systemImage: "xmark")
+                            .foregroundStyle(.red)
+                    }
                 }
             }
 
@@ -43,6 +63,11 @@ struct CreateHolidayView: View {
             }
         }
         .navigationTitle("Add a trip")
+        .task(id: selectedPhoto) {
+            if let data = try? await selectedPhoto?.loadTransferable(type: Data.self) {
+                selectedPhotoData = data
+            }
+        }
     }
 
 }
