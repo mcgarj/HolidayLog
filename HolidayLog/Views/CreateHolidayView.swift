@@ -9,8 +9,8 @@ struct CreateHolidayView: View {
 
     @State private var holiday = Holiday()
 
-    @State var selectedPhoto: PhotosPickerItem?
-    @State var selectedPhotoData: Data?
+    @State var photoPickerItems = [PhotosPickerItem]()
+    @State var images = [UIImage]()
 
     var body: some View {
         List {
@@ -24,34 +24,34 @@ struct CreateHolidayView: View {
             }
 
             Section {
+                VStack {
+                    PhotosPicker("Select photos", selection: $photoPickerItems, selectionBehavior: .ordered)
 
-                if let selectedPhotoData, let uiImage = UIImage(data: selectedPhotoData) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(maxWidth: .infinity, maxHeight: 300)
-                }
-
-                PhotosPicker(selection: $selectedPhoto,
-                             matching: .images,
-                             photoLibrary: .shared()) {
-                    Label("Add Image", systemImage: "photo")
-                }
-
-                if selectedPhotoData != nil {
-                    Button(role: .destructive) {
-                        withAnimation {
-                            selectedPhoto = nil
-                            selectedPhotoData = nil
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 20) {
+                            ForEach(0..<images.count, id: \.self) { i in
+                                Image(uiImage: images[i])
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(.circle)
+                            }
                         }
-                    } label: {
-                        Label("Remove Image", systemImage: "xmark")
-                            .foregroundStyle(.red)
                     }
                 }
+                .padding(30)
+                .task(id: photoPickerItems) {
+                    for photo in photoPickerItems {
+                        if let data = try? await photo.loadTransferable(type: Data.self) {
+                            if let image = UIImage(data: data) {
+                                images.append(image)
+                            }
+                        }
+                    }
+
+                    photoPickerItems.removeAll()
+                }
             }
-
-
 
             Section {
                 Button("Add") {
@@ -63,13 +63,7 @@ struct CreateHolidayView: View {
             }
         }
         .navigationTitle("Add a trip")
-        .task(id: selectedPhoto) {
-            if let data = try? await selectedPhoto?.loadTransferable(type: Data.self) {
-                selectedPhotoData = data
-            }
-        }
     }
-
 }
 
 #Preview {

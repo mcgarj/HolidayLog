@@ -9,25 +9,23 @@ final class Holiday {
     var dateTo: Date
     var details: String
     //TODO: CHANGE TO IMAGE TYPE
-    var photos: [String]?
+    @Attribute(.externalStorage) var photos: [Data]?
     var locationMap: String?
     var isFavourite: Bool
+
+    var images: [Data]?
 
     init(name: String = "",
          country: String = "",
          dateFrom: Date = Date.now,
          dateTo: Date = Date.now.addingTimeInterval(86400),
          details: String = "",
-         photos: [String]? = nil,
-         locationMap: String? = nil,
          isFavourite: Bool = false) {
         self.name = name
         self.country = country
         self.dateFrom = dateFrom
         self.dateTo = dateTo
         self.details = details
-        self.photos = photos
-        self.locationMap = locationMap
         self.isFavourite = isFavourite
     }
 }
