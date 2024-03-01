@@ -63,6 +63,13 @@ struct CreateHolidayView: View {
             }
         }
         .navigationTitle("Add a trip")
+        .task(id: photoPickerItems) {
+            for photo in photoPickerItems {
+                if let data = try? await photo.loadTransferable(type: Data.self) {
+                    holiday.images?.append(data)
+                }
+            }
+        }
     }
 }
 

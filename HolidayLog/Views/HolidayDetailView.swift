@@ -1,3 +1,4 @@
+import PhotosUI
 import SwiftUI
 
 struct HolidayDetailView: View {
@@ -19,6 +20,29 @@ struct HolidayDetailView: View {
                 Image(systemName: favouriteStar)
             } header: {
                 Text("**A Favourite?**")
+            }
+
+            Section {
+                VStack {
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 20) {
+                            // TODO: FIX ME
+                            if let selectedPhotos = trip.images {
+                                ForEach(0..<selectedPhotos.count, id: \.self) { image in
+                                    if let uiImage = UIImage(data: selectedPhotos[image]) {
+                                        Image(uiImage: uiImage)
+                                            .resizable()
+                                            .scaledToFill()
+                                    }
+
+                                }
+                            } else {
+                                Text("No photos added")
+                            }
+                        }
+                    }
+                }
+                .padding(30)
             }
         }
         .listRowSpacing(10)

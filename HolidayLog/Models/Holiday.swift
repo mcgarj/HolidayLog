@@ -8,11 +8,10 @@ final class Holiday {
     var dateFrom: Date
     var dateTo: Date
     var details: String
-    //TODO: CHANGE TO IMAGE TYPE
-    @Attribute(.externalStorage) var photos: [Data]?
     var locationMap: String?
     var isFavourite: Bool
 
+    @Attribute(.externalStorage) 
     var images: [Data]?
 
     init(name: String = "",
