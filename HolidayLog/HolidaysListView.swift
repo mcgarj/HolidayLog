@@ -52,9 +52,9 @@ struct HolidaysListView: View {
             .sheet(isPresented: $showCreate,
                    content: {
                 NavigationStack {
-                    CreateHolidayView()
+                    MapSearchView()
                 }
-                .presentationDetents([.medium])
+                .presentationDetents([.large])
             })
             .sheet(item: $tripToEdit) {
                 tripToEdit = nil

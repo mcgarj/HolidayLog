@@ -1,3 +1,4 @@
+import MapKit
 import SwiftUI
 
 struct HolidayDetailView: View {
@@ -5,6 +6,10 @@ struct HolidayDetailView: View {
     var favouriteStar: String {
         trip.isFavourite ? "star.fill" : "star"
     }
+    @State private var position = MapCameraPosition.automatic
+    @State private var searchResults = [SearchResult]()
+    @State private var selectedLocation: SearchResult?
+    @State private var enteredLocation: SearchCompletion?
 
     var body: some View {
         List {
@@ -25,4 +30,6 @@ struct HolidayDetailView: View {
         .navigationTitle("My trip to \(trip.name)")
     }
 }
+
+
 

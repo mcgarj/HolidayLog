@@ -12,10 +12,13 @@
 		41032DF42B7622BD00EFF672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41032DF32B7622BD00EFF672 /* Assets.xcassets */; };
 		41032DF82B7622BD00EFF672 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41032DF72B7622BD00EFF672 /* Preview Assets.xcassets */; };
 		41032E012B762F8100EFF672 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41032E002B762F8100EFF672 /* Holiday.swift */; };
+		4142729B2BA464A200EBD5C0 /* MapSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4142729A2BA464A200EBD5C0 /* MapSearchView.swift */; };
 		415C251B2B7F683700A61889 /* UpdateHolidayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C251A2B7F683700A61889 /* UpdateHolidayView.swift */; };
 		415C251D2B7F7A0E00A61889 /* HolidayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C251C2B7F7A0E00A61889 /* HolidayDetailView.swift */; };
 		415C251F2B7F994900A61889 /* HolidayRowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C251E2B7F994900A61889 /* HolidayRowListView.swift */; };
 		419C17C42B76461000D6B75D /* CreateHolidayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419C17C32B76461000D6B75D /* CreateHolidayView.swift */; };
+		41D8C2F92B9B4C4F000DFA4F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8C2F82B9B4C4F000DFA4F /* LocationService.swift */; };
+		41D8C2FB2B9B4FF7000DFA4F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8C2FA2B9B4FF7000DFA4F /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +29,13 @@
 		41032DF52B7622BD00EFF672 /* HolidayLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HolidayLog.entitlements; sourceTree = "<group>"; };
 		41032DF72B7622BD00EFF672 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41032E002B762F8100EFF672 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
+		4142729A2BA464A200EBD5C0 /* MapSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchView.swift; sourceTree = "<group>"; };
 		415C251A2B7F683700A61889 /* UpdateHolidayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateHolidayView.swift; sourceTree = "<group>"; };
 		415C251C2B7F7A0E00A61889 /* HolidayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDetailView.swift; sourceTree = "<group>"; };
 		415C251E2B7F994900A61889 /* HolidayRowListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayRowListView.swift; sourceTree = "<group>"; };
 		419C17C32B76461000D6B75D /* CreateHolidayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHolidayView.swift; sourceTree = "<group>"; };
+		41D8C2F82B9B4C4F000DFA4F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		41D8C2FA2B9B4FF7000DFA4F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		41032DEE2B7622BC00EFF672 /* HolidayLog */ = {
 			isa = PBXGroup;
 			children = (
+				41D8C2F72B9B4C3E000DFA4F /* Utilities */,
 				41032DFF2B762F6F00EFF672 /* Views */,
 				41032DFE2B762F6900EFF672 /* Models */,
 				41032DEF2B7622BC00EFF672 /* HolidayLogApp.swift */,
@@ -96,8 +103,18 @@
 				415C251C2B7F7A0E00A61889 /* HolidayDetailView.swift */,
 				415C251A2B7F683700A61889 /* UpdateHolidayView.swift */,
 				415C251E2B7F994900A61889 /* HolidayRowListView.swift */,
+				41D8C2FA2B9B4FF7000DFA4F /* MapView.swift */,
+				4142729A2BA464A200EBD5C0 /* MapSearchView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		41D8C2F72B9B4C3E000DFA4F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				41D8C2F82B9B4C4F000DFA4F /* LocationService.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,11 +189,14 @@
 			files = (
 				415C251D2B7F7A0E00A61889 /* HolidayDetailView.swift in Sources */,
 				415C251F2B7F994900A61889 /* HolidayRowListView.swift in Sources */,
+				41D8C2F92B9B4C4F000DFA4F /* LocationService.swift in Sources */,
 				41032E012B762F8100EFF672 /* Holiday.swift in Sources */,
 				41032DF22B7622BC00EFF672 /* HolidaysListView.swift in Sources */,
 				415C251B2B7F683700A61889 /* UpdateHolidayView.swift in Sources */,
 				41032DF02B7622BC00EFF672 /* HolidayLogApp.swift in Sources */,
+				41D8C2FB2B9B4FF7000DFA4F /* MapView.swift in Sources */,
 				419C17C42B76461000D6B75D /* CreateHolidayView.swift in Sources */,
+				4142729B2BA464A200EBD5C0 /* MapSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
