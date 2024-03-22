@@ -31,5 +31,8 @@ struct HolidayDetailView: View {
     }
 }
 
+func parseJson() {
+    
+}
 
 

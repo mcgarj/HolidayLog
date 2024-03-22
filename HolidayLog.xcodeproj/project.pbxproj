@@ -17,6 +17,9 @@
 		415C251D2B7F7A0E00A61889 /* HolidayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C251C2B7F7A0E00A61889 /* HolidayDetailView.swift */; };
 		415C251F2B7F994900A61889 /* HolidayRowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C251E2B7F994900A61889 /* HolidayRowListView.swift */; };
 		419C17C42B76461000D6B75D /* CreateHolidayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419C17C32B76461000D6B75D /* CreateHolidayView.swift */; };
+		41C61FBC2BAD835500365567 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C61FBB2BAD835500365567 /* cities.json */; };
+		41C61FBE2BAD838900365567 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C61FBD2BAD838900365567 /* Destination.swift */; };
+		41C61FC22BAD8FED00365567 /* DestinationJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C61FC12BAD8FED00365567 /* DestinationJSONDecoder.swift */; };
 		41D8C2F92B9B4C4F000DFA4F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8C2F82B9B4C4F000DFA4F /* LocationService.swift */; };
 		41D8C2FB2B9B4FF7000DFA4F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8C2FA2B9B4FF7000DFA4F /* MapView.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +37,9 @@
 		415C251C2B7F7A0E00A61889 /* HolidayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayDetailView.swift; sourceTree = "<group>"; };
 		415C251E2B7F994900A61889 /* HolidayRowListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayRowListView.swift; sourceTree = "<group>"; };
 		419C17C32B76461000D6B75D /* CreateHolidayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHolidayView.swift; sourceTree = "<group>"; };
+		41C61FBB2BAD835500365567 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		41C61FBD2BAD838900365567 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		41C61FC12BAD8FED00365567 /* DestinationJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationJSONDecoder.swift; sourceTree = "<group>"; };
 		41D8C2F82B9B4C4F000DFA4F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		41D8C2FA2B9B4FF7000DFA4F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				41032E002B762F8100EFF672 /* Holiday.swift */,
+				41C61FBD2BAD838900365567 /* Destination.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,7 +119,9 @@
 		41D8C2F72B9B4C3E000DFA4F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				41C61FBB2BAD835500365567 /* cities.json */,
 				41D8C2F82B9B4C4F000DFA4F /* LocationService.swift */,
+				41C61FC12BAD8FED00365567 /* DestinationJSONDecoder.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C61FBC2BAD835500365567 /* cities.json in Resources */,
 				41032DF82B7622BD00EFF672 /* Preview Assets.xcassets in Resources */,
 				41032DF42B7622BD00EFF672 /* Assets.xcassets in Resources */,
 			);
@@ -196,7 +206,9 @@
 				41032DF02B7622BC00EFF672 /* HolidayLogApp.swift in Sources */,
 				41D8C2FB2B9B4FF7000DFA4F /* MapView.swift in Sources */,
 				419C17C42B76461000D6B75D /* CreateHolidayView.swift in Sources */,
+				41C61FC22BAD8FED00365567 /* DestinationJSONDecoder.swift in Sources */,
 				4142729B2BA464A200EBD5C0 /* MapSearchView.swift in Sources */,
+				41C61FBE2BAD838900365567 /* Destination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

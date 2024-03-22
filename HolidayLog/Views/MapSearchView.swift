@@ -2,8 +2,12 @@ import MapKit
 import SwiftUI
 
 struct MapSearchView: View {
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var context
+
     @State private var locationService = LocationService(completer: .init())
     @State private var search = ""
+    @State private var showCreate = false
 
     var body: some View {
         VStack {
@@ -31,10 +35,22 @@ struct MapSearchView: View {
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
-
-            Button("Next") {
-                CreateHolidayView()
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        showCreate.toggle()
+                    }, label: {
+                        Label("Add trip", systemImage: "plus")
+                    })
+                }
             }
+            .sheet(isPresented: $showCreate,
+                   content: {
+                NavigationLink("Add trip") {
+                    CreateHolidayView()
+                }
+                .presentationDetents([.large])
+            })
         }
         .onChange(of: search) {
             locationService.update(queryFragment: search)

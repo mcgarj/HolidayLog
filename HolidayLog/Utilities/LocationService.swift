@@ -33,7 +33,7 @@ class LocationService: NSObject, MKLocalSearchCompleterDelegate {
     }
 
     func update(queryFragment: String) {
-        completer.resultTypes = .pointOfInterest
+//        completer.resultTypes = .
         completer.queryFragment = queryFragment
     }
 
